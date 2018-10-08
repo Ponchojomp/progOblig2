@@ -1,0 +1,35 @@
+package oblig.pkg2;
+
+import javax.swing.JOptionPane;
+
+public class Oblig2 {
+
+    public static void main(String[] args) {
+        int sum = 0;
+        String innNedre = JOptionPane.showInputDialog("Skriv inn nedre grense for en tallinje du vil summere:");
+        String innØvre = JOptionPane.showInputDialog("Skriv inn øvre grense for en tallinje du vil summere:");
+        int øvreGrense = Integer.parseInt(innØvre);
+        int nedreGrense = Integer.parseInt(innNedre);
+       
+        while ( øvreGrense<nedreGrense) {
+            JOptionPane.showMessageDialog(null, "Prøv på nytt, denne gangen må nedre grense være et mindre tall enn øvre grense.");
+            innNedre = JOptionPane.showInputDialog("Skriv inn nedre grense for en tallinje du vil summere:");
+            innØvre = JOptionPane.showInputDialog("Skriv inn øvre grense for en tallinje du vil summere:");
+            øvreGrense = Integer.parseInt(innØvre);
+            nedreGrense = Integer.parseInt(innNedre);
+            }
+        
+        for (int i = nedreGrense; i <= øvreGrense; i++) {
+            
+            sum = sum + i;
+            
+        }
+        for (int tallStreng = nedreGrense; tallStreng < øvreGrense; tallStreng++){
+            System.out.print(tallStreng+"+");
+            if(tallStreng%10 == 0)
+                System.out.println();
+        }
+        System.out.print(øvreGrense + "\n=" + sum);
+    }
+}
+    
